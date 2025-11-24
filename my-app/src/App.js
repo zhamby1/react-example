@@ -1,17 +1,26 @@
 //this is the new ES6 way to import modules...we say import and then the file location (. means current folder)
 import './App.css';
 
-//the way react works is everything is surrounded by a function.  It must be a return function
+  //not only can we use javascript to make variables out of html elements, we can create componenents
+  //componenets are kind of like objects in javascript as they can contain multiple elements or variables
+  //there is a keyword we can use called props
+  //props stand for properties, and allow you to change information inside you component by giving it an argument
+  //it is just like a parameter, excepts it allows you to enter multiple unknown properties within the body of the component
+function Greeting(props){
+   return (
+      <>
+      <h1>Hello!, {props.fname}</h1>
+      <p>Goodbye, {props.lname}</p>
+      </>
+  
+  )
+}
+
 function App(){
-  //jsx - html and javascript mixed
-  //since we can mix html and JS, we can use js variables with html elements
-  //we are using const alot?  Why
-  //this all about state which we will talk about later but basically const is set but not changed and is re-rendered each time the page refreshes
+
+  const component = <Greeting fname="Zach" lname = "Hamby"/>
   return (
-    <>
-      <h1>Hello World</h1>
-      <p>Goodbye</p>
-    </>
+    component
   )
   
 }
